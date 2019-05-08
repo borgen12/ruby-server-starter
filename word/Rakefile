@@ -1,0 +1,4 @@
+#this runs migrations to the database
+
+require './app'
+require 'sinatra/activerecord/rake'
