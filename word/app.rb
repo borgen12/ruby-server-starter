@@ -9,7 +9,10 @@ require './models/owner'        #Model class
 get '/owners' do
 	@owners = Owner.all
 	@owners.to_json
-end
+
+get '/pet' do
+	@pet = Pets.all
+	@pet.to_json
 
 # post '/submit' do
 # 	@model = Model.new(params[:model])
@@ -18,4 +21,3 @@ end
 # 	else
 # 		"Sorry, there was an error!"
 # 	end
-# end
