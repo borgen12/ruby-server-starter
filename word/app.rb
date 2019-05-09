@@ -4,9 +4,9 @@ require 'sinatra'
 require 'json'
 require 'sinatra/activerecord'
 require './config/environments' #database configuration
-require './models/owner'        #Model class
+require './models/model'        #Model class
 
-<<<<<<< HEAD
+
 get '/pet' do
 	# @pet = Pets.find_by_sql('SELECT * FROM pets JOIN owners ON pets.owner_id = owners.id;')
 	@pet = Pets.select("pets.*, owners.*").joins("JOIN owners ON pets.owner_id = owners.id;")
@@ -30,7 +30,7 @@ end
 	
 
 get '/owner' do
-	@owners = Owner.all
+	@owners = Owners.all
 	@owners.to_json
 end
 
