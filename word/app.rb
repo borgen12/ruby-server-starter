@@ -30,7 +30,7 @@ end
 	
 
 get '/owner' do
-	@owners = Owners.all
+	@owners = Owners.select("owners.*, count(pets.owner_id)").joins("JOIN pets ON pets.owner_id = owners.id").group("owners.id")
 	@owners.to_json
 end
 
