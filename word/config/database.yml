@@ -1,5 +1,5 @@
 development:
   adapter: postgresql
   database: pet_hotel
-  username: christopherborgen
+  username: air2014
   host: localhost
