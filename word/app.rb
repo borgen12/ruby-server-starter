@@ -1,11 +1,12 @@
 #main app file
 
 require 'sinatra'
+require 'json'
 require 'sinatra/activerecord'
 require './config/environments' #database configuration
-require './models/model'        #Model class
-require 'json'
+require './models/owner'        #Model class
 
+<<<<<<< HEAD
 get '/pet' do
 	# @pet = Pets.find_by_sql('SELECT * FROM pets JOIN owners ON pets.owner_id = owners.id;')
 	@pet = Pets.select("pets.*, owners.*").joins("JOIN owners ON pets.owner_id = owners.id;")
@@ -27,3 +28,10 @@ delete '/pet/:id' do
 end
 
 	
+
+get '/owner' do
+	@owners = Owner.all
+	@owners.to_json
+end
+
+

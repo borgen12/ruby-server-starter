@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 2019_05_08_183027) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", primary_key: "user_id", id: :serial, force: :cascade do |t|
-    t.string "username", limit: 12, null: false
-    t.string "city", limit: 128
-    t.integer "transactions_completed"
-    t.integer "transactions_attempted"
-    t.decimal "account_balance", precision: 12, scale: 2
-  end
-
   create_table "models", id: :serial, force: :cascade do |t|
     t.string "name"
   end
