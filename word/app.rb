@@ -4,9 +4,11 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './config/environments' #database configuration
 require './models/model'        #Model class
+require 'json'
 
 get '/pet' do
 	@pet = Pets.all
+	@pet.to_json
 end
 
 # post '/submit' do
