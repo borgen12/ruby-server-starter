@@ -6,13 +6,14 @@ require 'sinatra/activerecord'
 require './config/environments' #database configuration
 require './models/owner'        #Model class
 
-get '/owners' do
+get '/owner' do
 	@owners = Owner.all
 	@owners.to_json
+end
 
-get '/pet' do
-	@pet = Pets.all
-	@pet.to_json
+# get '/pet' do
+# 	@pet = Pets.all
+# 	@pet.to_json
 
 # post '/submit' do
 # 	@model = Model.new(params[:model])
